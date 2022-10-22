@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
     var options = {
         root: path.join(__dirname)
     };
-    var fileName = 'index3.html';
+    var fileName = 'index.html';
 
     mongoose
         .connect(db, { useNewUrlParser: true })
