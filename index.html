@@ -1,0 +1,65 @@
+<head>
+
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        body {
+            background-color: linen;
+        }
+
+        h1 {
+            color: maroon;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1 id="demo"> Hello World </h1>
+    <h2> Hello World </h2>
+    <h3> Hello World </h3>
+    <h4 id="h4"> Bananas are good. </h4>
+    <h5> We love elephants. </h5>
+    <p> we love you</p>
+    <p style="color:red; font-weight: bold;">This is a paragraph.</p>
+    <img src="pic_trulli.jpg" alt="Italian Trulli">
+    <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+    <button id="button1" onclick="testfunc"> button 1 </button>
+    <script>
+        var doc = document
+        document.getElementById("demo").innerHTML = "Hello JavaScript!";
+        var h4 = document.getElementById("h4")
+        var button1 = document.getElementById("button1")
+        console.log('button1',button1)
+        button1.onclick = function() {
+            console.log('button click')
+        };
+        h4.onclick = () => {
+            console.log('h4 click')
+        };
+        h4.onmouseover = () => {
+            h4.style.backgroundColor = 'green'
+            console.log('h4 mouse over')
+        };
+        h4.onmouseout = () => {
+            h4.style.backgroundColor = 'rgba(0,0,0,0)'
+            console.log('h4 mouse over')
+        };
+        doc.onclick = () => {
+            console.log('doc click', doc)   
+        }
+
+        doc.onmousemove = (evt) => {
+            console.log('doc mouse move', evt.x, evt.y)
+        }
+
+        doc.onscroll = (evt) => {
+            console.log('doc scroll', window.pageYOffset)
+        }
+
+        window.onclick = (evt) => {
+            console.log('window click', evt.x, evt.y)
+
+        }
+    </script>
+</body>
