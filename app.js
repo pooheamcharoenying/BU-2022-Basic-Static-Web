@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 var path = require('path');
 
@@ -14,28 +14,28 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-const Users = require('./models/User');
+// const Users = require('./models/User');
 
-//import Mongoose
-const mongoose = require('mongoose');
+// //import Mongoose
+// const mongoose = require('mongoose');
 
-const db = "mongodb+srv://pooh:01password@cluster0.lfxswgo.mongodb.net/TestDatabase?retryWrites=true&w=majority";
+// const db = "mongodb+srv://pooh:01password@cluster0.lfxswgo.mongodb.net/TestDatabase?retryWrites=true&w=majority";
 
-mongoose
-    .connect(db, { useNewUrlParser: true })
-    .then(() => {
-        console.log('MongoDB Connected...')
+// mongoose
+//     .connect(db, { useNewUrlParser: true })
+//     .then(() => {
+//         console.log('MongoDB Connected...')
 
-        // Users.find()
-        //     .then(items => console.log('item found', items));
+//         // Users.find()
+//         //     .then(items => console.log('item found', items));
 
-        var newUser = new Users({ name: 'Pol Pol', age: 80 });
-        newUser.save().then(user => {
-            console.log('user saved')
-        })
+//         var newUser = new Users({ name: 'Pol Pol', age: 80 });
+//         newUser.save().then(user => {
+//             console.log('user saved')
+//         })
 
-    })
-    .catch(err => console.log(err));
+//     })
+//     .catch(err => console.log(err));
 
 
 
