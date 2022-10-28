@@ -13,29 +13,32 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+app.use(express.static(__dirname + '/public'));
 
-// const Users = require('./models/User');
 
-// //import Mongoose
-// const mongoose = require('mongoose');
+const Users = require('./models/User');
 
-// const db = "mongodb+srv://pooh:01password@cluster0.lfxswgo.mongodb.net/TestDatabase?retryWrites=true&w=majority";
 
-// mongoose
-//     .connect(db, { useNewUrlParser: true })
-//     .then(() => {
-//         console.log('MongoDB Connected...')
+//import Mongoose
+const mongoose = require('mongoose');
 
-//         // Users.find()
-//         //     .then(items => console.log('item found', items));
+const db = "mongodb+srv://pooh:01password@cluster0.lfxswgo.mongodb.net/TestDatabase?retryWrites=true&w=majority";
 
-//         var newUser = new Users({ name: 'Pol Pol', age: 80 });
-//         newUser.save().then(user => {
-//             console.log('user saved')
-//         })
+mongoose
+    .connect(db, { useNewUrlParser: true })
+    .then(() => {
+        console.log('MongoDB Connected...')
 
-//     })
-//     .catch(err => console.log(err));
+        // Users.find()
+        //     .then(items => console.log('item found', items));
+
+        var newUser = new Users({ name: 'Pol Pol', age: 80 });
+        newUser.save().then(user => {
+            console.log('user saved')
+        })
+
+    })
+    .catch(err => console.log(err));
 
 
 
@@ -47,7 +50,7 @@ app.get('/', (req, res) => {
     var options = {
         root: path.join(__dirname)
     };
-    var fileName = 'index.html';
+    var fileName = 'index5.html';
 
     mongoose
         .connect(db, { useNewUrlParser: true })
