@@ -155,7 +155,7 @@
 
 
 
-        axios.get('http://127.0.0.1:3000/users')
+        axios.get('https://bu-basic-web.herokuapp.com/users')
             .then((response) => {
                 users = response.data
                 console.log('users updated', users)
@@ -167,6 +167,19 @@
                     usersDiv.appendChild(p);
                 }
             });
+
+        // axios.get('http://127.0.0.1:3000/users')
+        //     .then((response) => {
+        //         users = response.data
+        //         console.log('users updated', users)
+
+        //         for (user of users) {
+        //             let p = document.createElement("p");
+        //             p.innerHTML = user.name;
+        //             p.style.color = 'brown';
+        //             usersDiv.appendChild(p);
+        //         }
+        //     });
 
 
         var circleX = 0;
